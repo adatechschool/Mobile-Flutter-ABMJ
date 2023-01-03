@@ -13,19 +13,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String spotName = 'Reef Break';
+    String spotURL =
+        'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg';
+    String spotLocation = 'Pipeline, Oahu, Hawaii';
+
     return MaterialApp(
-        title: 'Welcome to Flutter',
-        home: Scaffold(
-          appBar: AppBar(
-              backgroundColor: const Color.fromARGB(255, 192, 234, 164),
-              title: const Center(child: Text('This is our app'))),
-          body: Center(
-              child: Column(children: [
-            const Text('Reef Break'),
-            Image.network(
-                'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg'),
-            const Text('Pipeline, Oahu, Hawaii'),
-          ])),
-        ));
+      title: 'Welcome to Flutter',
+      home: Scaffold(
+        appBar: AppBar(
+            backgroundColor: const Color.fromARGB(255, 192, 234, 164),
+            title: const Center(child: Text('Our Surf App'))),
+        body: Center(
+          child: Column(
+            children: [
+              Text(spotName),
+              Image.network(spotURL),
+              Text(spotLocation),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
