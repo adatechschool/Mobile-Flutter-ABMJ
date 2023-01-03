@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map records = Map.unmodifiable({
-      "Surf Break": "Reef Break",
-      "Photos":
-          "https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg",
-      "Address": "Pipeline, Oahu, Hawaii"
+    Map spot = Map.unmodifiable({
+      'Surf Break': 'Reef Break',
+      'Photos':
+          'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg',
+      'Address': 'Pipeline, Oahu, Hawaii'
     });
 
     // String spotName = 'Reef Break';
@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
     // String spotLocation = 'Pipeline, Oahu, Hawaii';
 
     return MaterialApp(
-      title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
             backgroundColor: const Color.fromARGB(255, 192, 234, 164),
@@ -35,9 +34,9 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              Text(records["Surf Break"]),
-              Image.network(records["Photos"]),
-              Text(records['Address']),
+              Text(spot['Surf Break']),
+              Image.network(spot['Photos']),
+              Text(spot['Address']),
             ],
           ),
         ),
