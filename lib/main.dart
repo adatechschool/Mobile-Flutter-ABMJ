@@ -27,20 +27,21 @@ class MyApp extends StatelessWidget {
     // String spotLocation = 'Pipeline, Oahu, Hawaii';
 
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-            backgroundColor: const Color.fromARGB(255, 192, 234, 164),
-            title: const Center(child: Text('Our Surf App'))),
-        body: Center(
+        home: Scaffold(
+      appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 192, 234, 164),
+          title: const Center(child: Text('Our Surf App', textScaleFactor: 2))),
+      body: Center(
+        child: Container(
           child: Column(
             children: [
-              Text(spot['Surf Break']),
+              Text(spot['Surf Break'], textScaleFactor: 3),
               Image.network(spot['Photos']),
-              Text(spot['Address']),
+              Text(spot['Address'], textScaleFactor: 2),
             ],
           ),
         ),
       ),
-    );
+    ));
   }
 }
