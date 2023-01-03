@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
       appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 192, 234, 164),
-          title: const Center(child: Text('Our Surf App', textScaleFactor: 2))),
+          title: const Center(
+              child: Text('Our Surf App 🏄‍♀️', textScaleFactor: 2))),
       body: Center(
         child: Container(
           child: Column(
