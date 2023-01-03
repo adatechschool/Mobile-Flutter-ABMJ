@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 //The main function is the starting point for all our Flutter apps
 void main() {
@@ -27,25 +28,40 @@ class MyApp extends StatelessWidget {
     // String spotLocation = 'Pipeline, Oahu, Hawaii';
 
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 164, 231, 234),
-          title: const Center(
-              child: Text('Our Surf App 🏄‍♀️', textScaleFactor: 2))),
-      body: Center(
-        child: Container(
-          color: Color.fromARGB(255, 200, 231, 233),
-          child: Column(
-            children: [
-              Text(spot['Surf Break'],
-                  textScaleFactor: 3, style: TextStyle(color: Colors.blueGrey)),
-              Image.network(spot['Photos']),
-              Text(spot['Address'],
-                  textScaleFactor: 2, style: TextStyle(color: Colors.blueGrey)),
-            ],
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        textTheme: GoogleFonts.sacramentoTextTheme(
+          Theme.of(context).textTheme,
+        ),
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 164, 231, 234),
+            title: const Center(
+                child: Text('Our Surf App 🏄‍♀️', textScaleFactor: 2))),
+        body: Center(
+          child: Container(
+            color: Color.fromARGB(255, 200, 231, 233),
+            child: Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Column(
+                children: [
+                  Text(
+                    spot['Surf Break'],
+                    textScaleFactor: 3,
+                  ),
+                  Image.network(spot['Photos']),
+                  Text(
+                    spot['Address'],
+                    textScaleFactor: 2,
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
-    ));
+    );
   }
 }
