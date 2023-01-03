@@ -29,16 +29,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 192, 234, 164),
+          backgroundColor: Color.fromARGB(255, 164, 231, 234),
           title: const Center(
               child: Text('Our Surf App 🏄‍♀️', textScaleFactor: 2))),
       body: Center(
         child: Container(
+          color: Color.fromARGB(255, 200, 231, 233),
           child: Column(
             children: [
-              Text(spot['Surf Break'], textScaleFactor: 3),
+              Text(spot['Surf Break'],
+                  textScaleFactor: 3, style: TextStyle(color: Colors.blueGrey)),
               Image.network(spot['Photos']),
-              Text(spot['Address'], textScaleFactor: 2),
+              Text(spot['Address'],
+                  textScaleFactor: 2, style: TextStyle(color: Colors.blueGrey)),
             ],
           ),
         ),
