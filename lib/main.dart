@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 
+//The main function is the starting point for all our Flutter apps
 void main() {
   runApp(const MyApp());
 }
@@ -13,10 +14,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String spotName = 'Reef Break';
-    String spotURL =
-        'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg';
-    String spotLocation = 'Pipeline, Oahu, Hawaii';
+    Map records = Map.unmodifiable({
+      "Surf Break": "Reef Break",
+      "Photos":
+          "https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg",
+      "Address": "Pipeline, Oahu, Hawaii"
+    });
+
+    // String spotName = 'Reef Break';
+    // String spotURL =
+    //     'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg';
+    // String spotLocation = 'Pipeline, Oahu, Hawaii';
 
     return MaterialApp(
       title: 'Welcome to Flutter',
@@ -27,9 +35,9 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              Text(spotName),
-              Image.network(spotURL),
-              Text(spotLocation),
+              Text(records["Surf Break"]),
+              Image.network(records["Photos"]),
+              Text(records['Address']),
             ],
           ),
         ),
