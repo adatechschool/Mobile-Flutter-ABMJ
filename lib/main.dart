@@ -28,35 +28,82 @@ class MyApp extends StatelessWidget {
     // String spotLocation = 'Pipeline, Oahu, Hawaii';
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Surfify',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         textTheme: GoogleFonts.sacramentoTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
       home: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 200, 231, 233),
         appBar: AppBar(
-            backgroundColor: const Color.fromARGB(255, 164, 231, 234),
-            title: const Center(
-                child: Text('Our Surf App 🏄‍♀️', textScaleFactor: 2))),
-        body: Center(
+          title: Center(
+            child: Column(children: [
+              Text(
+                '🏄‍♀️ Surfify',
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+              ),
+              Text(
+                'Locate the best spot on Earth !',
+                style: GoogleFonts.lato(
+                  textStyle:
+                      TextStyle(fontStyle: FontStyle.italic, fontSize: 10),
+                ),
+              )
+            ]),
+          ),
+          backgroundColor: Color.fromARGB(255, 59, 130, 166),
+        ),
+        body: SafeArea(
           child: Container(
-            color: const Color.fromARGB(255, 200, 231, 233),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                children: [
-                  Text(
-                    spot['Surf Break'],
-                    textScaleFactor: 3,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/background.jpg"),
+                  fit: BoxFit.cover),
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  // margin: const EdgeInsets.all(40.0),
+                  height: 400,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 185, 184, 184),
+                        blurRadius: 6.0,
+                        spreadRadius: 2.0,
+                        offset: Offset(0.0, 3),
+                      )
+                    ],
                   ),
-                  Image.network(spot['Photos']),
-                  Text(
-                    spot['Address'],
-                    textScaleFactor: 2,
+                  child: Column(
+                    children: [
+                      Text(
+                        spot['Surf Break'],
+                        textScaleFactor: 3,
+                        // style: const TextStyle(fontSize: 18),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image(
+                          image: NetworkImage(spot['Photos']),
+                        ),
+                      ),
+                      Text(
+                        spot['Address'],
+                        textScaleFactor: 2,
+                        // style: const TextStyle(fontSize: 18),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
