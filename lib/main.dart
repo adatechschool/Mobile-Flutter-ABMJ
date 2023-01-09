@@ -183,11 +183,28 @@ class SpotsLists extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 59, 130, 166),
         ),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Go back!'),
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/background.jpg"),
+                  fit: BoxFit.cover),
+            ),
+            child: Center(
+              child: ElevatedButton(
+                child: Text(
+                  'Go back!',
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(fontSize: 15),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 59, 130, 166),
+                ),
+              ),
+            ),
           ),
         ),
       ),
