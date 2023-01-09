@@ -8,6 +8,19 @@ void main() {
   runApp(const MyApp());
 }
 
+class SurfSpot {
+  String name;
+  String url;
+  String address;
+
+  SurfSpot(this.name, this.url, this.address);
+
+  @override
+  String toString() {
+    return '{ ${this.name}, ${this.url}, ${this.address} }';
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -41,31 +54,61 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Color.fromARGB(255, 59, 130, 166),
         ),
-        body: Mylist(),
+        body: MyList(),
       ),
     );
   }
 }
-class Mylist extends StatelessWidget {
-  const Mylist({super.key});
+
+class MyList extends StatelessWidget {
+  const MyList({super.key});
 
   @override
-Widget build(BuildContext context) {
-  final List<String> entries = <String>['A', 'B', 'C'];
-  final List<int> colorCodes = <int>[600, 500, 100];
-  return ListView.separated(
-    padding: const EdgeInsets.all(8),
-    itemCount: entries.length,
-    itemBuilder: (BuildContext context, int index) {
-      return Container(
-        height: 50,
-        color: Colors.amber[colorCodes[index]],
-        child: Center(child: Text('Entry ${entries[index]}')),
-      );
-    },
-    separatorBuilder: (BuildContext context, int index) => const Divider(),
-  );
-}
+  Widget build(BuildContext context) {
+    // var spot1 = SurfSpot(
+    //     'Reef Break',
+    //     'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg',
+    //     'Pipeline, Oahu, Hawaii');
+    // var spot2 = SurfSpot(
+    //     'Point Break',
+    //     'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
+    //     'Supertubes, Jeffreys Bay, South Africa');
+    // final List<SurfSpot> spots = [spot1, spot2];
+
+    List spots = [];
+    spots.add(SurfSpot(
+        'Reef Break',
+        'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg',
+        'Pipeline, Oahu, Hawaii'));
+    spots.add(SurfSpot(
+        'Point Break',
+        'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
+        'Supertubes, Jeffreys Bay, South Africa'));
+
+    return ListView.separated(
+      padding: const EdgeInsets.all(8),
+      itemCount: spots.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          height: 50,
+          child: Center(
+            child: Column(
+              children: [
+                Text('${spots[index].name}', style: GoogleFonts.lato()
+                    // textScaleFactor: 3,
+                    ),
+                Text(
+                  '${spots[index].address}',
+                  style: GoogleFonts.lato(),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) => const Divider(),
+    );
+  }
 }
 
 class OneSpot extends StatelessWidget {
