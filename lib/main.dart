@@ -41,10 +41,31 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Color.fromARGB(255, 59, 130, 166),
         ),
-        body: OneSpot(),
+        body: Mylist(),
       ),
     );
   }
+}
+class Mylist extends StatelessWidget {
+  const Mylist({super.key});
+
+  @override
+Widget build(BuildContext context) {
+  final List<String> entries = <String>['A', 'B', 'C'];
+  final List<int> colorCodes = <int>[600, 500, 100];
+  return ListView.separated(
+    padding: const EdgeInsets.all(8),
+    itemCount: entries.length,
+    itemBuilder: (BuildContext context, int index) {
+      return Container(
+        height: 50,
+        color: Colors.amber[colorCodes[index]],
+        child: Center(child: Text('Entry ${entries[index]}')),
+      );
+    },
+    separatorBuilder: (BuildContext context, int index) => const Divider(),
+  );
+}
 }
 
 class OneSpot extends StatelessWidget {
