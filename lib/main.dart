@@ -1,23 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'SurfSpot.dart';
 
 //The main function is the starting point for all our Flutter apps
 void main() {
   runApp(const MyApp());
-}
-
-//This class define the SurfSpot objects for later
-class SurfSpot {
-  String name;
-  String url;
-  String address;
-
-  SurfSpot(this.name, this.url, this.address);
-
-  @override
-  String toString() {
-    return '{ ${this.name}, ${this.url}, ${this.address} }';
-  }
 }
 
 //Our main widget : contain appbar, theme and body
@@ -26,6 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("hello la team");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Surfify',
@@ -64,9 +52,83 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//List our spots
+class MyList extends StatelessWidget {
+  const MyList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // var spot1 = SurfSpot(
+    //     'Reef Break',
+    //     'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg',
+    //     'Pipeline, Oahu, Hawaii');
+    // var spot2 = SurfSpot(
+    //     'Point Break',
+    //     'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
+    //     'Supertubes, Jeffreys Bay, South Africa');
+    // final List<SurfSpot> spots = [spot1, spot2];
+
+    List spots = [];
+    spots.add(SurfSpot(
+        'Reef Break',
+        'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg',
+        'Pipeline, Oahu, Hawaii'));
+    spots.add(SurfSpot(
+        'Point Break',
+        'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
+        'Supertubes, Jeffreys Bay, South Africa'));
+
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("images/background.jpg"), fit: BoxFit.cover),
+      ),
+      child: ListView.separated(
+        padding: const EdgeInsets.all(10),
+        itemCount: spots.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            height: 60,
+            child: Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 59, 130, 166),
+                ),
+                onPressed: () {
+                  // When the user taps the button,
+                  // navigate to a named route and
+                  // provide the arguments as an optional
+                  // parameter.
+                  Navigator.pushNamed(
+                    context,
+                    ExtractArgumentsScreen.routeName,
+                    arguments: ScreenArguments('${spots[index].name}',
+                        '${spots[index].url}', '${spots[index].address}'),
+                  );
+                },
+                child: Column(
+                  children: [
+                    Text(
+                      '${spots[index].name}',
+                      style: GoogleFonts.lato(fontSize: 25),
+                    ),
+                    Text(
+                      '${spots[index].address}',
+                      style: GoogleFonts.lato(),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) => const Divider(),
+      ),
+    );
+  }
+}
+
 // You can pass any object to the arguments parameter.
-// In this example, create a class that contains both
-// a customizable title and message.
 class ScreenArguments {
   final String name;
   final String url;
@@ -155,82 +217,6 @@ class ExtractArgumentsScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-//List our spots
-class MyList extends StatelessWidget {
-  const MyList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // var spot1 = SurfSpot(
-    //     'Reef Break',
-    //     'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg',
-    //     'Pipeline, Oahu, Hawaii');
-    // var spot2 = SurfSpot(
-    //     'Point Break',
-    //     'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
-    //     'Supertubes, Jeffreys Bay, South Africa');
-    // final List<SurfSpot> spots = [spot1, spot2];
-
-    List spots = [];
-    spots.add(SurfSpot(
-        'Reef Break',
-        'https://dl.airtable.com/ZuXJZ2NnTF40kCdBfTld_thomas-ashlock-64485-unsplash.jpg',
-        'Pipeline, Oahu, Hawaii'));
-    spots.add(SurfSpot(
-        'Point Break',
-        'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
-        'Supertubes, Jeffreys Bay, South Africa'));
-
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("images/background.jpg"), fit: BoxFit.cover),
-      ),
-      child: ListView.separated(
-        padding: const EdgeInsets.all(10),
-        itemCount: spots.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 60,
-            child: Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 59, 130, 166),
-                ),
-                onPressed: () {
-                  // When the user taps the button,
-                  // navigate to a named route and
-                  // provide the arguments as an optional
-                  // parameter.
-                  Navigator.pushNamed(
-                    context,
-                    ExtractArgumentsScreen.routeName,
-                    arguments: ScreenArguments('${spots[index].name}',
-                        '${spots[index].url}', '${spots[index].address}'),
-                  );
-                },
-                child: Column(
-                  children: [
-                    Text(
-                      '${spots[index].name}',
-                      style: GoogleFonts.lato(fontSize: 25),
-                    ),
-                    Text(
-                      '${spots[index].address}',
-                      style: GoogleFonts.lato(),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
     );
   }
