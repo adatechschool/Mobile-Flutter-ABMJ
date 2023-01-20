@@ -1,17 +1,32 @@
+import 'dart:developer';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'SurfSpot.dart';
-
+import 'surf_spot.dart';
 
 //The main function is the starting point for all our Flutter apps
+//Connect Flutter with Firebase
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: "surfify-99e91",
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  print("coucou");
+  //Connect firebase realtime database
+  final ref = FirebaseDatabase.instance.ref();
+
+  final snapshot = await ref.child('/spots').get();
+  if (snapshot.exists) {
+    log(snapshot.value.toString());
+  } else {
+    log('No data available.');
+  }
+
   runApp(const MyApp());
 }
 
@@ -22,7 +37,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("hello la team");
+    log("hello la team");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Surfify',
@@ -39,23 +54,23 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Center(
             child: Column(children: [
-              Text(
+              const Text(
                 '🏄‍♀️ Surfify',
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
               ),
               Text(
                 'Locate the best spot on Earth !',
                 style: GoogleFonts.lato(
                   textStyle:
-                      TextStyle(fontStyle: FontStyle.italic, fontSize: 10),
+                      const TextStyle(fontStyle: FontStyle.italic, fontSize: 10),
                 ),
               )
             ]),
           ),
-          backgroundColor: Color.fromARGB(255, 59, 130, 166),
+          backgroundColor: const Color.fromARGB(255, 59, 130, 166),
         ),
-        body: MyList(),
+        body: const MyList(),
       ),
     );
   }
@@ -91,6 +106,8 @@ class MyList extends StatelessWidget {
         'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
         'SuperShit, North Dakota'));
 
+
+
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -100,12 +117,12 @@ class MyList extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         itemCount: spots.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
+          return SizedBox(
             height: 60,
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 59, 130, 166),
+                  backgroundColor: const Color.fromARGB(255, 59, 130, 166),
                 ),
                 onPressed: () {
                   // When the user taps the button,
@@ -169,7 +186,7 @@ class ExtractArgumentsScreen extends StatelessWidget {
           args.name,
           style: GoogleFonts.lato(),
         ),
-        backgroundColor: Color.fromARGB(255, 59, 130, 166),
+        backgroundColor: const Color.fromARGB(255, 59, 130, 166),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -216,7 +233,7 @@ class ExtractArgumentsScreen extends StatelessWidget {
                       Text(
                         args.address,
                         style: GoogleFonts.lato(
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontWeight: FontWeight.w300,
                               fontStyle: FontStyle.italic,
                               fontSize: 20),

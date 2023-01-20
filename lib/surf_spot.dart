@@ -8,6 +8,6 @@ class SurfSpot {
 
   @override
   String toString() {
-    return '{ ${this.name}, ${this.url}, ${this.address} }';
+    return '$name, $url, $address';
   }
 }
