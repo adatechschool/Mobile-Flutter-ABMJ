@@ -93,8 +93,8 @@ class Spots extends StatelessWidget {
         final spots = [];
 
         if(snapshot.hasData == true
-           && snapshot.data is DataSnapshot
-           && (snapshot.data as DataSnapshot).value is List){
+            && snapshot.data is DataSnapshot
+            && (snapshot.data as DataSnapshot).value is List){
           // Data from Firebase
           final data = (snapshot.data as DataSnapshot).value;
 
