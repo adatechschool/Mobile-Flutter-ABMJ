@@ -87,11 +87,13 @@ class Spots extends StatelessWidget {
     //     'https://dl.airtable.com/e3QoP3cFSyykZJOvWGIy_cesar-couto-477018-unsplash%20(1).jpg',
     //     'SuperShit, North Dakota'));
 
+// FutureBuilder récupère les données du serveur pour le construire dans le widget
     return FutureBuilder(
       future: databaseRef.child('/spots').get(),
       builder: ((context, snapshot) {
         final spots = [];
 
+// Vérifie si le résultat est ok
         if(snapshot.hasData == true
             && snapshot.data is DataSnapshot
             && (snapshot.data as DataSnapshot).value is List){
@@ -147,6 +149,8 @@ class Spots extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
+                            // "??" pour éviter à l'appli de crasher,  
+                            // il faut toujours avoir une donnée lisible. 
                             spots[index]['name'] ?? 'Defaut',
                             style: GoogleFonts.lato(fontSize: 25),
                           ),
