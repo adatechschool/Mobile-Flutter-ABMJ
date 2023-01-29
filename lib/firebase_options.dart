@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '227274715584',
     projectId: 'surfify-99e91',
     authDomain: 'surfify-99e91.firebaseapp.com',
+    databaseURL: 'https://surfify-99e91-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'surfify-99e91.appspot.com',
     measurementId: 'G-WQM0EY1F2G',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:227274715584:android:6e9ae81163a0b1c2d11825',
     messagingSenderId: '227274715584',
     projectId: 'surfify-99e91',
+    databaseURL: 'https://surfify-99e91-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'surfify-99e91.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:227274715584:ios:658aead42fbec500d11825',
     messagingSenderId: '227274715584',
     projectId: 'surfify-99e91',
+    databaseURL: 'https://surfify-99e91-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'surfify-99e91.appspot.com',
     iosClientId: '227274715584-d4rm1599mq9b7b1bqrm8cj1n25ofe64q.apps.googleusercontent.com',
     iosBundleId: 'com.example.projectMobileFlutter',
@@ -76,6 +79,7 @@ class DefaultFirebaseOptions {
     appId: '1:227274715584:ios:658aead42fbec500d11825',
     messagingSenderId: '227274715584',
     projectId: 'surfify-99e91',
+    databaseURL: 'https://surfify-99e91-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'surfify-99e91.appspot.com',
     iosClientId: '227274715584-d4rm1599mq9b7b1bqrm8cj1n25ofe64q.apps.googleusercontent.com',
     iosBundleId: 'com.example.projectMobileFlutter',
