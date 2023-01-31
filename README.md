@@ -1,6 +1,9 @@
 ```
 open -a Simulator
 ```
+<p><img align="center" alt="" src="https://github.com/Alexluu13/P6_projet-Insta-almaauch/blob/master/insta_almaauch1.png"/></p>
+<p><img align="center" alt="" src="https://github.com/Alexluu13/P6_projet-Insta-almaauch/blob/master/insta_almaauch2.png"/></p>
+<p><img align="center" alt="" src="https://github.com/Alexluu13/P6_projet-Insta-almaauch/blob/master/insta_almaauch3.png"/></p>
 
 ***
 ***
