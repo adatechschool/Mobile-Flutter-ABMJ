@@ -1,9 +1,9 @@
 ```
 open -a Simulator
 ```
-<p><img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter1.png" width="300" height="500"/></p>
-<p><img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter2.png" width="300" height="500"/></p>
-<p><img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter3.png" width="300" height="500"/></p>
+<p><img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter1.png" width="180" height="280"/></p>
+<p><img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter2.png" width="180" height="280"/></p>
+<p><img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter3.png" width="180" height="280"/></p>
 
 ***
 ***
