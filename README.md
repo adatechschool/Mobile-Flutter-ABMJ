@@ -1,3 +1,10 @@
+```
+open -a Simulator
+```
+
+***
+***
+
 # project_mobile_flutter
 
 A new Flutter project.
