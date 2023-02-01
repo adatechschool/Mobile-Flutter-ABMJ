@@ -1,11 +1,44 @@
+Ce projet collectif à pour objectif de développer une application mobile sur les meilleurs spots de surf. Le but est de découvrir le mobile et son approche. Projet sur deux semaines. Nous avons utiliser Flutter pour pouvoir faire fonctionner notre application à la fois sur apple et à la fois sur android. 
+
+Pour la partie back end nous avons utiliser Firebase. Il propose d'héberger en NoSQL et en temps réel des bases de données, du contenu, de l'authentification sociale (Google, Facebook, Twitter et Github), et des notifications, ou encore des services, tel que par exemple un serveur de communication temps réel.  
+
+```
+flutter create my_app
+```
+Création d'une apllication. 
+
 ```
 open -a Simulator
 ```
+Lancer le simulateur. 
+
+
+## Outils:
+- Flutte, Dart
+- Firebase
+
 <p>
-<img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter1.png" width="180" height="320"/>
-<img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter2.png" width="180" height="320"/>
-<img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter3.png" width="180" height="320"/>
+<img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter1.png" width="180" height="340"/>
+<img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter2.png" width="180" height="340"/>
+<img align="center" alt="" src="https://github.com/adatechschool/Mobile-Flutter-ABMJ/blob/main/P7_mobile_flutter3.png" width="180" height="340"/>
 </p>
+
+```
+flutter run
+```
+Run.
+```
+flutter clean
+```
+Effacer le cache.
+```
+flutter doctor
+```
+Vérifier les configs de Flutter (Xcode, Android studio…)
+```
+pub get
+```
+Installation dépendance flutter.
 
 ***
 ***
