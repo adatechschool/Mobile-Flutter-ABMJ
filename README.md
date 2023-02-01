@@ -41,6 +41,12 @@ pub get
 Installation dépendance flutter.
 
 ***
+
+- [Installer Flutter](https://docs.flutter.dev/get-started/install).
+- [Connecter Flutter avec Firebase](https://firebase.google.com/docs/flutter/setup?platform=ios&hl=fr#available-plugins).
+- [Connecter Flutter avec Realtime Database](https://firebase.google.com/docs/database/flutter/start?hl=fr).
+
+***
 ***
 
 # project_mobile_flutter
